@@ -1,7 +1,9 @@
+import { Link } from "@inertiajs/inertia-react";
+
 export default function Sidebar() {
     return (
         <aside className="fixed z-50 w-[300px] h-full">
-            <div className="flex flex-col p-[30px] pr-0 border-r border-gray-[#F1F1F1] overflow-y-auto h-full">
+            <div className="flex flex-col p-[30px] pr-0 border-r border-gray-[#F1F1F1] h-full">
                 <a href="/">
                     <img src="/images/moonton.svg" alt="" />
                 </a>
@@ -79,7 +81,10 @@ export default function Sidebar() {
 
                     <div>
                         <div className="mb-4 text-gray-1 side-link">Others</div>
-                        <a href="pricing.html" className="side-link">
+                        <Link
+                            href={route("prototype.subscriptionPlan")}
+                            className="side-link"
+                        >
                             <svg
                                 width="24"
                                 height="24"
@@ -94,7 +99,7 @@ export default function Sidebar() {
                                 />
                             </svg>
                             Payments
-                        </a>
+                        </Link>
                         <a href="#!" className="side-link">
                             <svg
                                 width="24"
