@@ -2,7 +2,7 @@ import { Link } from "@inertiajs/inertia-react";
 
 export default function Sidebar() {
     return (
-        <aside className="fixed z-50 w-[300px] h-full">
+        <aside className="sticky top-0 left-0 float-left z-50 w-[300px] h-full">
             <div className="flex flex-col p-[30px] pr-0 border-r border-gray-[#F1F1F1] h-full">
                 <a href="/">
                     <img src="/images/moonton.svg" alt="" />
@@ -10,7 +10,10 @@ export default function Sidebar() {
                 <div className="links flex flex-col mt-[60px] h-full gap-[50px]">
                     <div>
                         <div className="mb-4 text-sm text-gray-1">Menu</div>
-                        <a href="/" className="side-link active">
+                        <Link
+                            href={route("prototype.dashboard")}
+                            className="side-link active"
+                        >
                             <svg
                                 width="24"
                                 height="24"
@@ -28,7 +31,7 @@ export default function Sidebar() {
                                 </g>
                             </svg>
                             Discover
-                        </a>
+                        </Link>
                         <a href="#!" className="side-link">
                             <svg
                                 width="24"
